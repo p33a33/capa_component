@@ -1,23 +1,38 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { ButtonProps } from "@material-ui/core";
-import { CustomizedButton } from "../../CustomizedComponent";
+import { Button } from "../../CustomizedComponent";
 
 export default {
-  title: "CAPA/Button",
-  component: CustomizedButton,
+  title: "CAPA DesignSystem/Component/Button",
+  component: Button,
   argTypes: {
-    color: { options: ["primary", "secondary"], control: "radio" },
-    size: { options: ["small", "medium", "large"], control: "radio" },
-    variant: { options: ["contained", "outlined", "text"], control: "radio" },
-    children: { control: "text" },
-    fullWidth: { control: "boolean" },
-    disabled: { control: "boolean" },
+    color: {
+      options: ["primary", "secondary"],
+      control: "radio",
+      description: "버튼 색상",
+      defaultValue: "primary",
+    },
+    size: {
+      options: ["small", "medium", "large"],
+      control: "radio",
+      description: "버튼 사이즈",
+      defaultValue: "medium",
+    },
+    variant: {
+      options: ["contained", "outlined", "text"],
+      control: "radio",
+      description: "버튼 스타일",
+      defaultValue: "contained",
+    },
+    children: { control: "text", description: "버튼 라벨" },
+    fullWidth: { control: "boolean", description: "전체너비 여부" },
+    disabled: { control: "boolean", description: "비활성화" },
   },
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => (
-  <CustomizedButton {...args} disableElevation />
+  <Button {...args} disableElevation />
 );
 
 export const Contained = Template.bind({});

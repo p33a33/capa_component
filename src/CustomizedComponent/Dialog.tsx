@@ -2,7 +2,7 @@ import React from "react";
 import {
   makeStyles,
   Box,
-  Dialog,
+  Dialog as MaterialDialog,
   DialogContent,
   DialogActions,
   useTheme,
@@ -10,7 +10,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import { CloseOutlined } from "@material-ui/icons";
-import { CustomizedTypography } from ".";
+import { Typography } from ".";
 import { colorSet } from "../Provider";
 
 export interface CustomizedDialogProps {
@@ -25,14 +25,14 @@ export interface CustomizedDialogProps {
   maxWidth?: number;
 }
 
-const CustomizedDialog = (props: CustomizedDialogProps) => {
+const Dialog = (props: CustomizedDialogProps) => {
   const maxWidth = props.maxWidth || 600;
   const classes = useStyles({ maxWidth });
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Dialog
+    <MaterialDialog
       open={props.open}
       onClose={props.onClose}
       classes={{ root: classes.root }}
@@ -45,13 +45,13 @@ const CustomizedDialog = (props: CustomizedDialogProps) => {
           >
             {props.icon}
           </Box>
-          <CustomizedTypography
+          <Typography
             variant={matches ? "body1" : "h3"}
             color="textPrimary"
             fontWeight="700"
           >
             {props.title}
-          </CustomizedTypography>
+          </Typography>
         </Box>
         <IconButton className="closeButton" onClick={props.onClose}>
           <CloseOutlined />
@@ -59,24 +59,21 @@ const CustomizedDialog = (props: CustomizedDialogProps) => {
       </Box>
 
       <DialogContent>
-        <CustomizedTypography
-          variant={matches ? "body1" : "h4"}
-          fontWeight="500"
-        >
+        <Typography variant={matches ? "body1" : "h4"} fontWeight="500">
           {props.mainText}
-        </CustomizedTypography>
+        </Typography>
 
-        <CustomizedTypography variant={"body2"} className={classes.subText}>
+        <Typography variant={"body2"} className={classes.subText}>
           {props.subText}
-        </CustomizedTypography>
+        </Typography>
       </DialogContent>
 
       <DialogActions>{props.buttons}</DialogActions>
-    </Dialog>
+    </MaterialDialog>
   );
 };
 
-export default CustomizedDialog;
+export default Dialog;
 
 const useStyles = makeStyles((theme) => ({
   root: (props: { maxWidth?: number }) => ({

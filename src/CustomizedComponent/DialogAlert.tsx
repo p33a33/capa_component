@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomizedButton, CustomizedTypography } from "./index";
+import { Button, Typography } from "./index";
 import { InfoOutlined, CloseOutlined } from "@material-ui/icons";
 import { Dialog, Box, makeStyles, IconButton } from "@material-ui/core";
 import { colorSet } from "../Provider";
@@ -41,23 +41,23 @@ const DialogAlert = ({
         alignItems="center"
         className="content"
       >
-        <CustomizedTypography variant="h4" color="textPrimary" fontWeight="700">
+        <Typography variant="h4" color="textPrimary" fontWeight="700">
           {title}
-        </CustomizedTypography>
-        <CustomizedTypography variant="body2" className="gray700">
+        </Typography>
+        <Typography variant="body2" className="gray700">
           {subText}
-        </CustomizedTypography>
+        </Typography>
       </Box>
 
       <Box display="flex" flexDirection="column" className="button">
-        <CustomizedButton
+        <Button
           variant="contained"
           color="primary"
           size="large"
           onClick={buttonAction}
         >
           {buttonLabel}
-        </CustomizedButton>
+        </Button>
       </Box>
     </Dialog>
   );

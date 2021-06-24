@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import {
   ClickAwayListener,
   makeStyles,
-  Tooltip,
+  Tooltip as MaterialTooltip,
   Grid,
   Box,
   BoxProps,
 } from "@material-ui/core";
-import CustomizedTypography from "./CustomizedTypography";
+import Typography from "./Typography";
 import { colorSet } from "../Provider";
 import { CloseOutlined } from "@material-ui/icons";
 
@@ -40,7 +40,7 @@ export interface CustomizedTooltipProps {
   button?: React.ReactNode;
 }
 
-const CustomizedTooltip = ({
+const Tooltip = ({
   color = "gray",
   close_button = false,
   arrow = false,
@@ -77,13 +77,9 @@ const CustomizedTooltip = ({
     <Box display="flex" flexDirection="column">
       <Grid container direction="row">
         <Box>
-          <CustomizedTypography
-            variant="body2"
-            fontWeight="500"
-            className={messageStyle}
-          >
+          <Typography variant="body2" fontWeight="500" className={messageStyle}>
             {title}
-          </CustomizedTypography>
+          </Typography>
         </Box>
         {close_button ? (
           <Box
@@ -113,7 +109,7 @@ const CustomizedTooltip = ({
         if (!closeByButtonOnly) close();
       }}
     >
-      <Tooltip
+      <MaterialTooltip
         interactive={closeByButtonOnly}
         disableFocusListener
         disableHoverListener={!useHover}
@@ -142,12 +138,12 @@ const CustomizedTooltip = ({
         <Box onClick={openSwitch} style={{ ...boxStyle }}>
           {children}
         </Box>
-      </Tooltip>
+      </MaterialTooltip>
     </ClickAwayListener>
   );
 };
 
-export default CustomizedTooltip;
+export default Tooltip;
 
 const useStyles = makeStyles((theme) => ({
   tooltip_base: {

@@ -1,5 +1,8 @@
 import React from "react";
-import { Typography, TypographyProps } from "@material-ui/core";
+import {
+  Typography as MaterialTypography,
+  TypographyProps,
+} from "@material-ui/core";
 
 export interface Props extends TypographyProps {
   fontWeight?:
@@ -14,17 +17,20 @@ export interface Props extends TypographyProps {
   gutterBottoms?: number;
 }
 
-const CustomizedTypography: React.FC<Props> = (props) => {
+const Typography: React.FC<Props> = (props) => {
   const { fontWeight, gutterBottoms, ...rest } = props;
   let styled: any = Object.assign(
     {},
     { fontWeight: fontWeight, marginBottom: gutterBottoms, ...rest }
   );
   return (
-    <Typography {...rest} style={{ ...styled, ...rest.style }}>
+    <MaterialTypography
+      {...rest}
+      style={{ ...styled, ...rest.style }}
+    >
       {props.children}
-    </Typography>
+    </MaterialTypography>
   );
 };
 
-export default CustomizedTypography;
+export default Typography;

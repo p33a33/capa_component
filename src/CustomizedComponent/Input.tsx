@@ -1,7 +1,6 @@
 import React from "react";
 import {
   TextField,
-  TextFieldProps,
   makeStyles,
   Box,
   OutlinedTextFieldProps,
@@ -19,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: props.labelPlacement === "left" ? "row" : "column",
     alignItems: props.labelPlacement === "left" ? "center" : "default",
+    height: "fit-content",
   }),
   labelBox: (props: any) => ({
     display: "flex",
@@ -27,20 +27,24 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:
       props.labelPlacement === "left" ? "center" : "space-between",
   }),
-  root: {
+  root: (props: any) => ({
     "& .MuiInputBase-root": {
       border: `1px solid ${colorSet.gray400}`,
+      ...(props.size === "medium"
+        ? theme.typography.h4
+        : theme.typography.body1),
     },
     "& .MuiInputBase-input.Mui-disabled": {
       backgroundColor: colorSet.gray100,
       color: colorSet.gray500,
     },
-  },
+  }),
 }));
 
-const CustomizedInput = (props: CustomizedInputProps) => {
+const Input = (props: CustomizedInputProps) => {
   const labelPlacement = props.labelPlacement || "left";
-  const classes = useStyles({ labelPlacement });
+  const size = props.size || "small";
+  const classes = useStyles({ labelPlacement, size });
   return (
     <Box className={classes.wrapper}>
       <Box className={classes.labelBox}>
@@ -48,11 +52,12 @@ const CustomizedInput = (props: CustomizedInputProps) => {
         {labelPlacement === "top" && <Box>{props.labelSubtext}</Box>}
       </Box>
       <TextField
-        {...(props as TextFieldProps)}
+        {...(props as OutlinedTextFieldProps)}
+        size={size}
         classes={{ root: classes.root }}
       />
     </Box>
   );
 };
 
-export default CustomizedInput;
+export default Input;

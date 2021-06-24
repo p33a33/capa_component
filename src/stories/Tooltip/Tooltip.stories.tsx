@@ -1,12 +1,12 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { CustomizedButton, CustomizedTooltip } from "../../CustomizedComponent";
+import { Button, Tooltip } from "../../CustomizedComponent";
 import { InfoOutlined } from "@material-ui/icons";
-import { CustomizedTooltipProps } from "../../CustomizedComponent/CustomizedTooltip";
+import { CustomizedTooltipProps } from "../../CustomizedComponent/Tooltip";
 
 export default {
-  title: "CAPA/Tooltip",
-  component: CustomizedTooltip,
+  title: "CAPA DesignSystem/Component/Tooltip",
+  component: Tooltip,
   argTypes: {
     color: {
       options: ["gray", "primary"],
@@ -86,11 +86,16 @@ export default {
       description: "툴팁 내 버튼(Element). fullWidth 추천",
     },
   },
+  decorators: [
+    (Story: Story) => (
+      <div style={{ padding: "50px 300px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
-const Template: Story<CustomizedTooltipProps> = (args) => (
-  <CustomizedTooltip {...args} />
-);
+const Template: Story<CustomizedTooltipProps> = (args) => <Tooltip {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -131,8 +136,8 @@ CloseByCloseButton.args = {
   closeByButtonOnly: true,
 };
 
-export const Hover = Template.bind({});
-Hover.args = {
+export const UseHover = Template.bind({});
+UseHover.args = {
   ...Default.args,
   useHover: true,
 };
@@ -148,8 +153,8 @@ export const WithButton = Template.bind({});
 WithButton.args = {
   ...Default.args,
   button: (
-    <CustomizedButton variant="contained" color="primary" fullWidth>
+    <Button variant="contained" color="primary" fullWidth>
       Button
-    </CustomizedButton>
+    </Button>
   ),
 };

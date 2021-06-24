@@ -1,11 +1,11 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { CustomizedTypography } from "../../CustomizedComponent";
-import { Props } from "../../CustomizedComponent/CustomizedTypography";
+import { Typography } from "../../CustomizedComponent";
+import { Props } from "../../CustomizedComponent/Typography";
 
 export default {
-  title: "CAPA/Typography",
-  component: CustomizedTypography,
+  title: "CAPA DesignSystem/Component/Typography",
+  component: Typography,
   argTypes: {
     variant: {
       options: ["caption", "body2", "body1", "h4", "h3", "h2", "h1"],
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Props> = (args) => <CustomizedTypography {...args} />;
+const Template: Story<Props> = (args) => <Typography {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

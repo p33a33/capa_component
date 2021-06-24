@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { CustomizedDialog, DialogAlert } from "../../CustomizedComponent";
-import { DialogAlertProps } from "../../CustomizedComponent/CustomizedDialogAlert";
+import { DialogAlert } from "../../CustomizedComponent";
+import { DialogAlertProps } from "../../CustomizedComponent/DialogAlert";
 
 export default {
-  title: "CAPA/DialogAlert",
+  title: "CAPA DesignSystem/Component/DialogAlert",
   component: DialogAlert,
   argTypes: {
     open: { control: "boolean", description: "팝업의 열림/닫힘 상태" },

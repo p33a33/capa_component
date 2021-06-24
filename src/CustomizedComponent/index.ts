@@ -1,17 +1,23 @@
-import CustomizedButton from "./CustomizedButton";
-import CustomizedInput from "./CustomizedInput";
-import CustomizedTypography from "./CustomizedTypography";
-import CustomizedDialog from "./CustomizedDialog";
-import DialogAlert from "./CustomizedDialogAlert";
-import CustomizedTooltip from "./CustomizedTooltip";
-import CustomizedLabel from "./CustomizedLable";
+import Button from "./Button";
+import Input from "./Input";
+import Typography from "./Typography";
+import Dialog from "./Dialog";
+import DialogAlert from "./DialogAlert";
+import Tooltip from "./Tooltip";
+import Label from "./Lable";
+import Logo from "./Logo";
+import Select from "./Select";
+import Notification from "./Notification";
 
 export {
-  CustomizedButton,
-  CustomizedInput,
-  CustomizedTypography,
-  CustomizedDialog,
+  Button,
+  Input,
+  Typography,
+  Dialog,
   DialogAlert,
-  CustomizedTooltip,
-  CustomizedLabel,
+  Tooltip,
+  Label,
+  Logo,
+  Notification,
+  Select,
 };

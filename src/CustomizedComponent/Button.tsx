@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import { Button, ButtonProps } from "@material-ui/core";
+import { Button as MaterialButton, ButtonProps } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { theme as globalTheme, colorSet } from "../Provider";
 
-const CustomizedButton: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const theme = useMemo(() => {
     return createMuiTheme({
       ...globalTheme,
@@ -136,11 +136,11 @@ const CustomizedButton: React.FC<ButtonProps> = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Button disableElevation {...props}>
+      <MaterialButton disableElevation {...props}>
         {props.children}
-      </Button>
+      </MaterialButton>
     </ThemeProvider>
   );
 };
 
-export default CustomizedButton;
+export default Button;

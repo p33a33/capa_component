@@ -1,35 +1,32 @@
 import React from "react";
-import CustomizedTypography from "./CustomizedTypography";
+import Typography from "./Typography";
 import { Chip, ChipProps, makeStyles } from "@material-ui/core";
 import { colorSet } from "../Provider";
 
 export interface CustomizedLabelProps extends ChipProps {
   shape?: "square" | "round";
-  backgroundColor: string;
-  textColor: string;
+  backgroundColor?: string;
+  textColor?: string;
   text?: string;
-  fontWeight: "700" | "500";
+  fontWeight?: "700" | "500";
 }
 
-const CustomizedLabel = (props: CustomizedLabelProps) => {
+const Label = (props: CustomizedLabelProps) => {
   const { root } = useStyles(props);
   return (
     <Chip
       className={root}
       {...props}
       label={
-        <CustomizedTypography
-          variant="caption"
-          fontWeight={props.fontWeight || "700"}
-        >
+        <Typography variant="caption" fontWeight={props.fontWeight || "700"}>
           {props.text}
-        </CustomizedTypography>
+        </Typography>
       }
     />
   );
 };
 
-export default CustomizedLabel;
+export default Label;
 
 const useStyles = makeStyles((theme) => ({
   root: (props: CustomizedLabelProps) => ({

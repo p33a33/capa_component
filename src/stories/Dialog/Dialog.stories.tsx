@@ -1,13 +1,13 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { CustomizedButton, CustomizedDialog } from "../../CustomizedComponent";
-import { CustomizedDialogProps } from "../../CustomizedComponent/CustomizedDialog";
+import { Button, Dialog } from "../../CustomizedComponent";
+import { CustomizedDialogProps } from "../../CustomizedComponent/Dialog";
 import { colorSet } from "../../Provider";
 import { CheckCircleOutlined } from "@material-ui/icons";
 
 export default {
-  title: "CAPA/Dialog",
-  component: CustomizedDialog,
+  title: "CAPA DesignSystem/Component/Dialog",
+  component: Dialog,
   argTypes: {
     open: { control: "boolean", description: "팝업의 열림/닫힘 상태" },
     iconBoxColor: {
@@ -30,9 +30,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CustomizedDialogProps> = (args) => (
-  <CustomizedDialog {...args} />
-);
+const Template: Story<CustomizedDialogProps> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -47,12 +45,12 @@ Default.args = {
     "모든 국민은 직업선택의 자유를 가진다. 대법관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 국회는 국가의 예산안을 심의·확정한다. 헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다.",
   buttons: (
     <>
-      <CustomizedButton variant="contained" color="primary">
+      <Button variant="contained" color="primary">
         Button 1
-      </CustomizedButton>
-      <CustomizedButton variant="contained" color="secondary">
+      </Button>
+      <Button variant="contained" color="secondary">
         Button 2
-      </CustomizedButton>
+      </Button>
     </>
   ),
 };

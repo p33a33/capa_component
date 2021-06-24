@@ -9,20 +9,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: "centered",
+  backgrounds: {
+    default: "gray",
+    values: [{ name: "gray", value: "#E5E5E5" }],
+  },
 };
 
-export const decorators = [
-  (Story) => (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Story />
-    </div>
-  ),
-  muiTheme([theme]),
-];
+export const decorators = [muiTheme([theme])];
