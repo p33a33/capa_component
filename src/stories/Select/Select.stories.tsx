@@ -1,5 +1,4 @@
-import React from "react";
-import { MenuItem } from "@material-ui/core";
+import React, {useState} from "react";
 import { Story, Meta } from "@storybook/react";
 import { Select, Typography } from "../../CustomizedComponent";
 import { CustomizedSelectProps } from "../../CustomizedComponent/Select";
@@ -65,7 +64,14 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CustomizedSelectProps> = (args) => <Select {...args} />;
+const Template: Story<CustomizedSelectProps> = (args) => {
+  const [value, setValue] = useState<string>('');
+  const onChange = (e : React.ChangeEvent<{ value : unknown}>) => {
+    setValue(e.target.value as string);
+  }
+
+return <Select {...args} value={value} onChange={onChange}/>
+};
 
 export const Default = Template.bind({});
 Default.args = {

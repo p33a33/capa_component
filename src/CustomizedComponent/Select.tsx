@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
       transform : props.helperText && props.error ?'translateY(calc(-50% - 8px))' : 'translateY(calc(-50%))',
       color : colorSet.gray600,
       ...(props.size === 'small' ? theme.typography.body2 : theme.typography.body1),
-      zIndex : 2
+      zIndex : 1
     },
     '& .MuiFormHelperText-root' : {
       color : colorSet.errorBase
@@ -82,7 +82,7 @@ const Select = (props: CustomizedSelectProps) => {
         {labelPlacement === "top" && <Box>{props.labelSubtext}</Box>}
       </Box>
       <FormControl>
-        {!props.value && <InputLabel disableAnimation shrink={false}>{props.placeholder}</InputLabel>}
+        {!props.value && <InputLabel disableAnimation>{props.placeholder}</InputLabel>}
       <MaterialSelect
         {...(props as SelectProps)}
         inputProps={props as InputBaseComponentProps}
