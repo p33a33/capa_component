@@ -8,6 +8,10 @@ export default {
   title: "CAPA DesignSystem/Component/Select",
   component: Select,
   argTypes: {
+    variant : {
+      defaultValue : 'outlined',
+      control : 'none'
+    },
     width: {
       control: "number",
       defaultValue: 300,
@@ -23,8 +27,16 @@ export default {
       description: "아이템 너비에 따른 자동너비 설정 여부",
       defaultValue: false,
     },
-    placeholder: { control: "text", description: "Select 내부 안내문구 설정" },
+    placeholder: { control: "text", description: "Select 내부 안내문구 설정", defaultValue : "placeholder" },
     disabled: { control: "boolean", description: "비활성화" },
+    error : {
+      control : 'boolean',
+      description : '현재 select 에러 발생 여부'
+    },
+    helperText : {
+      control : 'text',
+      description : '에러 발생시 select 아래 표시되는 안내 텍스트, error : true인 경우에만 노출'
+    },
     labelPlacement: {
       options: ["top", "left"],
       control: "radio",
@@ -32,6 +44,10 @@ export default {
       defaultValue: "left",
     },
     inputLabel: { control: "text", description: "Select 라벨 문구" },
+    listPlacement : {
+      options : ['top', 'bottom'],
+      control : 'radio'
+    },
     labelSubtext: {
       control: "text",
       description: "Select 라벨 설명문구(라벨 위치 top인 경우에만 표시)",
@@ -39,7 +55,7 @@ export default {
     menuItems: {
       control: "array",
       description:
-        "Select 아이템을 [{item : string, value : any}] 형식으로 전달",
+        "Select 아이템을 [{item : ReactNode or string, value : any}] 형식으로 전달",
       defaultValue: [
         { item: "default", value: "default" },
         { item: "second", value: "second" },
@@ -54,9 +70,7 @@ const Template: Story<CustomizedSelectProps> = (args) => <Select {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   variant: "outlined",
-  placeholder: "small input",
   size: "small",
-  defaultValue: "default",
 };
 
 export const LeftLabel = Template.bind({});
@@ -101,14 +115,15 @@ Disabled.args = {
   disabled: true,
 };
 
-export const Multiline = Template.bind({});
-Multiline.args = {
-  ...Default.args,
-  multiline: true,
-};
-
-export const onError = Template.bind({});
-onError.args = {
+export const Error = Template.bind({});
+Error.args = {
   ...Default.args,
   error: true,
+};
+
+export const ErrorWHelpertext = Template.bind({});
+ErrorWHelpertext.args = {
+  ...Default.args,
+  error: true,
+  helperText : 'error'
 };
