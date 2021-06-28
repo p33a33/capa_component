@@ -8,10 +8,11 @@ export interface GlobalNavigationBarProps {
   buttons? : React.ReactNode;
   tabs? : (React.ReactNode | string)[];
   handleTabChange? : (e : React.ChangeEvent<{}>, newValue : any) => void;
+  banner? : React.ReactNode;
 }
 
 const GlobalNavigationBar = (props : GlobalNavigationBarProps) => {
-  const { container, LogoSection, TabSection, ButtonSection} = useStyles({type : props.type});
+  const { container, LogoSection, TabSection, ButtonSection, BannerSection} = useStyles({type : props.type});
   const [currentTab, setCurrentTab] = useState(0);
   const handleChange = (e : React.ChangeEvent<{}>, newValue : any) => {
     if(props.handleTabChange) {
@@ -21,11 +22,12 @@ const GlobalNavigationBar = (props : GlobalNavigationBarProps) => {
   }
 
   return (
+    <>
   <Box className={container}>
     <Box className="left">
     {/* Logo Section */}
     <Box className={LogoSection}>
-      <Logo type={props.type} color="primary" width={props.type === 'client' ? 89 : 185} />
+      <Logo type={props.type} color="primary" height={24} />
       </Box>
 
       {/* Tab Section */}
@@ -40,7 +42,13 @@ const GlobalNavigationBar = (props : GlobalNavigationBarProps) => {
       <Box className={ButtonSection}>
         {props.buttons}
       </Box>
-  </Box>)
+
+  </Box>
+      {/* GNB Bottom Banner Section */}
+      {props.banner && <Box className={BannerSection}>
+        {props.banner}
+      </Box>}
+      </>)
 }
 
 export default GlobalNavigationBar;
@@ -83,4 +91,11 @@ const useStyles = makeStyles((theme) => ({
       }
     }
   },
+  BannerSection : {
+    position : 'absolute',
+    display : 'flex',
+    alignItems : 'center',
+    width : '100%',
+    borderTop : `1px solid ${colorSet.gray400}`
+  }
 }))

@@ -8,6 +8,7 @@ import Label from "./Lable";
 import Logo from "./Logo";
 import Select from "./Select";
 import Notification from "./Notification";
+import NavigationBanner from "./NavigationBanner";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   Logo,
   Notification,
   Select,
+  NavigationBanner
 };

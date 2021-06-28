@@ -1,10 +1,12 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { GlobalNavigationBar} from "../../CustomizedLayout";
-import { Button } from '../../CustomizedComponent';
+import { Button, Typography, NavigationBanner } from '../../CustomizedComponent';
 import { GlobalNavigationBarProps } from "../../CustomizedLayout/GlobalNavigationBar/GlobalNavigationBar";
-import { IconButton } from "@material-ui/core";
-import { AccountCircleRounded, Apps, NotificationsOutlined } from "@material-ui/icons";
+import { Box, IconButton } from "@material-ui/core";
+import { AccountCircleRounded, Apps, ChevronRight, InfoOutlined, NotificationsOutlined } from "@material-ui/icons";
+import { colorSet } from '../../Provider';
+import { InfoBanner, RatingBanner } from '../NavigationBanner/NavigationBanner.stories';
 
 export default {
   title: "CAPA DesignSystem/Layout/GlobalNavigationBar",
@@ -49,3 +51,15 @@ Partner.args = {
   <IconButton children={<AccountCircleRounded />} />
   </>
 };
+
+export const WithInfoBanner = Template.bind({});
+WithInfoBanner.args = {
+  ...Client.args,
+  banner : <NavigationBanner {...InfoBanner.args} />
+}
+
+export const WithRatingBanner = Template.bind({});
+WithRatingBanner.args = {
+  ...Client.args,
+  banner : <NavigationBanner {...RatingBanner.args} />
+}
