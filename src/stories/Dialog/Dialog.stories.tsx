@@ -36,7 +36,7 @@ export const Default = Template.bind({});
 Default.args = {
   open: false,
   onClose: () => console.log("closed"),
-  iconBoxColor: colorSet.goodDark,
+  iconBoxColor: colorSet.successDark,
   icon: <CheckCircleOutlined />,
   title: "모든 국민은 직업선택의 자유를 가진다.",
   mainText:

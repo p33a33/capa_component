@@ -24,10 +24,7 @@ const Typography: React.FC<Props> = (props) => {
     { fontWeight: fontWeight, marginBottom: gutterBottoms, ...rest }
   );
   return (
-    <MaterialTypography
-      {...rest}
-      style={{ ...styled, ...rest.style }}
-    >
+    <MaterialTypography {...rest} style={{ ...styled, ...rest.style }}>
       {props.children}
     </MaterialTypography>
   );

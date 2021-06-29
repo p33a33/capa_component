@@ -1,15 +1,5 @@
 import { createMuiTheme } from "@material-ui/core";
 import colorSet from "./colorSet";
-declare module "@material-ui/core/styles/createPalette" {
-  interface Palette {
-    red : Palette['primary'];
-    green: Palette['primary'];
-  }
-  interface PaletteOptions {
-    red : PaletteOptions['primary'];
-    green: PaletteOptions['primary'];
-  }
-}
 
 const theme = createMuiTheme({
   typography: {
@@ -104,18 +94,6 @@ const theme = createMuiTheme({
       secondary: colorSet.gray600,
       disabled: colorSet.gray300,
     },
-    red : {
-      light : colorSet.errorLight,
-      main : colorSet.errorBase,
-      dark : colorSet.errorDark,
-      contrastText : colorSet.gray000
-    },
-    green : {
-      light : colorSet.goodLight,
-      main : colorSet.goodMain,
-      dark : colorSet.goodDark,
-      contrastText : colorSet.gray000
-    }
   },
 });
 

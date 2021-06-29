@@ -168,8 +168,8 @@ export const 이벤트진행안내 = Template.bind({});
   label: {
     text: "이벤트",
     shape: "square",
-    backgroundColor: colorSet.goodLight,
-    textColor: colorSet.goodDark,
+    backgroundColor: colorSet.successLight,
+    textColor: colorSet.successDark,
   },
   time: "6분 전",
   title: "CAPA 통큰 이벤트 첫번째!",
@@ -182,8 +182,8 @@ export const 스탬프적립 = Template.bind({});
   label: {
     text: "이벤트",
     shape: "square",
-    backgroundColor: colorSet.goodLight,
-    textColor: colorSet.goodDark,
+    backgroundColor: colorSet.successLight,
+    textColor: colorSet.successDark,
   },
   time: "6분 전",
   title: "+2 친구초대 스탬프 적립",
