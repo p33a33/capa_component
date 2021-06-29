@@ -2,7 +2,6 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { Logo } from "../../CustomizedComponent";
 import { LogoProps } from "../../CustomizedComponent/Logo";
-import { colorSet } from "../../Provider";
 
 export default {
   title: "CAPA DesignSystem/Component/Logo",

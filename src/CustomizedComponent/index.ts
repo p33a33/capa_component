@@ -9,6 +9,7 @@ import Logo from "./Logo";
 import Select from "./Select";
 import Notification from "./Notification";
 import NavigationBanner from "./NavigationBanner";
+import Tab from "./Tab";
 
 export {
   Button,
@@ -21,5 +22,6 @@ export {
   Logo,
   Notification,
   Select,
-  NavigationBanner
+  NavigationBanner,
+  Tab,
 };

@@ -1,12 +1,30 @@
 import React, { useMemo } from "react";
-import { Button as MaterialButton, ButtonProps } from "@material-ui/core";
+import { Button as MaterialButton } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { theme as globalTheme, colorSet } from "../Provider";
+import { MuiButtonProps, ICustomizedButtonProps } from "./types";
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ICustomizedButtonProps> = (
+  props: ICustomizedButtonProps
+) => {
+  const { color, ...rest } = props;
+  const colorProp =
+    color === "default" || color === "success" || color === "error"
+      ? "secondary"
+      : color;
+  const customizedPalette =
+    color === "default" || color === "success" || color === "error"
+      ? MuiButtonProps[color].palette
+      : globalTheme.palette;
+  const customizedStyle =
+    color === "default" || color === "success" || color === "error"
+      ? MuiButtonProps[color].style
+      : {};
+
   const theme = useMemo(() => {
     return createMuiTheme({
       ...globalTheme,
+      palette: customizedPalette,
       overrides: {
         MuiButton: {
           root: {
@@ -42,8 +60,7 @@ const Button: React.FC<ButtonProps> = (props) => {
               color: colorSet.gray400,
             },
             "&:hover": {
-              backgroundColor: colorSet.primary500,
-              color: colorSet.gray000,
+              backgroundColor: colorSet.primary200,
             },
           },
           outlinedSecondary: {
@@ -88,13 +105,8 @@ const Button: React.FC<ButtonProps> = (props) => {
             fontSize: 16,
             fontWeight: 500,
           },
-          outlined: {
-            height: 40,
-            fontSize: 14,
-            fontWeight: 500,
-          },
           outlinedSizeSmall: {
-            height: 30,
+            height: 24,
             fontSize: 14,
             fontWeight: 500,
           },
@@ -103,40 +115,39 @@ const Button: React.FC<ButtonProps> = (props) => {
             fontSize: 16,
             fontWeight: 500,
           },
-          contained: {
-            height: 40,
-            fontSize: 14,
-            fontWeight: 500,
-          },
           containedSizeSmall: {
-            height: 30,
+            height: 24,
             fontSize: 14,
             fontWeight: 500,
           },
-
           textSizeLarge: {
             height: 24,
             fontSize: 16,
             fontWeight: 500,
-          },
-          text: {
-            fontSize: 14,
-            fontWeight: 500,
-            height: 40,
           },
           textSizeSmall: {
             height: 20,
             fontSize: 14,
             fontWeight: 500,
           },
+          ...customizedStyle,
         },
       },
     });
-  }, []);
+  }, [customizedPalette, customizedStyle, globalTheme]);
 
   return (
     <ThemeProvider theme={theme}>
-      <MaterialButton disableElevation {...props}>
+      <MaterialButton
+        {...rest}
+        color={colorProp}
+        className={
+          props.size === "medium"
+            ? props.className + " medium"
+            : props.className
+        }
+        disableElevation
+      >
         {props.children}
       </MaterialButton>
     </ThemeProvider>

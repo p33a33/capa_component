@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { ButtonProps } from "@material-ui/core";
+import { ICustomizedButtonProps } from "../../CustomizedComponent/types";
 import { Button } from "../../CustomizedComponent";
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: Button,
   argTypes: {
     color: {
-      options: ["primary", "secondary"],
+      options: ["primary", "default", "success", "error"],
       control: "radio",
       description: "버튼 색상",
       defaultValue: "primary",
@@ -31,8 +31,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => (
-  <Button {...args} disableElevation />
+const Template: Story<ICustomizedButtonProps> = (args) => (
+  <Button {...args} onClick={console.log} />
 );
 
 export const Contained = Template.bind({});

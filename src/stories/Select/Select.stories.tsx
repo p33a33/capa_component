@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Story, Meta } from "@storybook/react";
 import { Select, Typography } from "../../CustomizedComponent";
 import { CustomizedSelectProps } from "../../CustomizedComponent/Select";
@@ -7,9 +7,9 @@ export default {
   title: "CAPA DesignSystem/Component/Select",
   component: Select,
   argTypes: {
-    variant : {
-      defaultValue : 'outlined',
-      control : 'none'
+    variant: {
+      defaultValue: "outlined",
+      control: "none",
     },
     width: {
       control: "number",
@@ -26,15 +26,20 @@ export default {
       description: "아이템 너비에 따른 자동너비 설정 여부",
       defaultValue: false,
     },
-    placeholder: { control: "text", description: "Select 내부 안내문구 설정", defaultValue : "placeholder" },
-    disabled: { control: "boolean", description: "비활성화" },
-    error : {
-      control : 'boolean',
-      description : '현재 select 에러 발생 여부'
+    placeholder: {
+      control: "text",
+      description: "Select 내부 안내문구 설정",
+      defaultValue: "placeholder",
     },
-    helperText : {
-      control : 'text',
-      description : '에러 발생시 select 아래 표시되는 안내 텍스트, error : true인 경우에만 노출'
+    disabled: { control: "boolean", description: "비활성화" },
+    error: {
+      control: "boolean",
+      description: "현재 select 에러 발생 여부",
+    },
+    helperText: {
+      control: "text",
+      description:
+        "에러 발생시 select 아래 표시되는 안내 텍스트, error : true인 경우에만 노출",
     },
     labelPlacement: {
       options: ["top", "left"],
@@ -43,9 +48,9 @@ export default {
       defaultValue: "left",
     },
     inputLabel: { control: "text", description: "Select 라벨 문구" },
-    listPlacement : {
-      options : ['top', 'bottom'],
-      control : 'radio'
+    listPlacement: {
+      options: ["top", "bottom"],
+      control: "radio",
     },
     labelSubtext: {
       control: "text",
@@ -65,12 +70,12 @@ export default {
 } as Meta;
 
 const Template: Story<CustomizedSelectProps> = (args) => {
-  const [value, setValue] = useState<string>('');
-  const onChange = (e : React.ChangeEvent<{ value : unknown}>) => {
+  const [value, setValue] = useState<string>("");
+  const onChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     setValue(e.target.value as string);
-  }
+  };
 
-return <Select {...args} value={value} onChange={onChange}/>
+  return <Select {...args} value={value} onChange={onChange} />;
 };
 
 export const Default = Template.bind({});
@@ -131,5 +136,5 @@ export const ErrorWHelpertext = Template.bind({});
 ErrorWHelpertext.args = {
   ...Default.args,
   error: true,
-  helperText : 'error'
+  helperText: "error",
 };
