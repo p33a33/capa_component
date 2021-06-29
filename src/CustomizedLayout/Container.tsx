@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 375,
     width: "calc(100% - 32px)",
     backgroundColor: backgroundColor,
+    marginBottom: 300,
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "16px",
       paddingRight: "16px",

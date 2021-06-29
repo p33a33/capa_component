@@ -1,24 +1,22 @@
 import React from "react";
-import { Box, makeStyles, useTheme, useMediaQuery } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import { Container } from ".";
 import { ContainerProps } from "./Container";
 import { Logo, Typography } from "../CustomizedComponent";
 import { colorSet } from "../Provider";
 
 export interface FooterProps extends ContainerProps {
-  onClickLogo: () => void;
-  onClickEmail: () => void;
+  onClickLogo?: () => void;
+  onClickEmail?: () => void;
   links: { title: string; onClick: () => void }[];
 }
 
 const Footer = (props: FooterProps) => {
   const classes = useStyles();
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Container
-      style={{ height: !matches ? 422 : 433 }}
+      style={{ height: 422, marginBottom: 0 }}
       justifyContent="center"
       wrapperStyle={{
         style: {
