@@ -46,6 +46,8 @@
 <hr>
 <br>
 
+컴포넌트는 [크로매틱 페이지](https://www.chromatic.com/library?appId=60d2effc20d0c20039e7013a&groupPrefix=CAPA+DesignSystem)에서 하실 수 있습니다.
+
 ## 레이아웃
 
 - GlobalNavigationBar
@@ -57,17 +59,17 @@
 
 ## 컴포넌트
 
-- Button
-- Dialog
-- DialogAlert
-- Input
-- Label
-- Logo
-- NavigationBanner
-- Notification
-- Select
-- Tab
-- Tooltip
-- Typography
+- [Button](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-button--contained)
+- [Dialog](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-dialog--default)
+- [DialogAlert](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-dialogalert--default)
+- [Input](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-input--default)
+- [Label](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-label--default)
+- [Logo](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-logo--default)
+- [NavigationBanner](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-navigationbanner--info-banner)
+- [Notification](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-notification--default)
+- [Select](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-select--default)
+- [Tab](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-tab--default)
+- [Tooltip](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-tooltip--default)
+- [Typography](https://60d2effc20d0c20039e7013a-mhhcdcnmsf.chromatic.com/?path=/story/capa-designsystem-component-typography--default)
 
 <br>
