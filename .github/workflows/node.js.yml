@@ -27,8 +27,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    
-    - name: NPM Pulbish
     - run: npm run publish 
       env: 
         NODE_AUTH_TOKEN : ${{ secrets.NPM_TOKEN }}
