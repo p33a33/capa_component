@@ -18,7 +18,7 @@ const Template: Story<ContainerProps> = (args) => <Container {...args} />;
 
 export const PaddingY32 = Template.bind({});
 PaddingY32.args = {
-  children: "children 위치",
+  children: "children 위치입니다",
   paddingTop: "32px",
   paddingBottom: "32px",
   minHeight: "100vh",
