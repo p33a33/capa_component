@@ -27,9 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: git config --global user.email "david@capa.ai"
-    - run: git config --global user.name "david"
-    - run: npm run publish 
-      env: 
-        NODE_AUTH_TOKEN : ${{ secrets.NPM_TOKEN }}
+    - run: git config --global user.email "p33a33@gmail.com"
+    - run: git config --global user.name "Sungmin Cho"
+    - name: NPM Publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+
 
