@@ -21,9 +21,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - env:
+        NPM_TOKEN: ${{ secrets.npm_token }}
+    - run: git config --global user.email "david@capa.ai"
+    - run: git config --global user.name "David"
+    - run: npm login
     - run: npm run publish
