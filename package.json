@@ -55,6 +55,7 @@
     "@types/styled-components": "^5.1.10",
     "chromatic": "^5.9.2",
     "eslint": "^7.29.0",
+    "exports-loader": "^3.0.0",
     "fork-ts-checker-webpack-plugin": "^6.2.12",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
