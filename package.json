@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf /dist && tsc",
-    "ready-publish": "npm version patch && cp -R package.json dist/ && cd ./dist",
+    "ready-publish": "npm version patch && cp -R package.json dist/ && cd dist/ && npm publish",
     "tsc": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
