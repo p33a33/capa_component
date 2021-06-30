@@ -1,11 +1,12 @@
 {
   "name": "@david_capa/capa-component",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf /dist && tsc && cp -R src/CustomizedComponent dist/ && cp -R src/CustomizedLayout dist/ && cp -R src/Provider dist/ && cp -R src/assets dist/",
-    "publish": "npm run build && cp -R package.json dist/ && cd dist/ && npm publish",
+    "ready-publish": "npm run build && cp -R package.json dist/",
+    "publishing": "cd dist/ && npm publish",
     "tsc": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
