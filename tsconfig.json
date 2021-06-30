@@ -1,26 +1,26 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "declaration": true,
+    "jsx": "react",
+    "lib": ["es2015", "dom"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/stories",
+    "src/index.css",
+    "src/index.tsx",
+    "src/App.tsx",
+    "src/reportWebVitals"
+  ],
+  "files": ["src/index.ts"]
 }

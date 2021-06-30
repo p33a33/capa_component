@@ -4,11 +4,11 @@ import {
   makeStyles,
   Box,
   SelectProps,
-  InputBaseComponentProps,
   MenuItem,
   InputLabel,
   FormControl,
   FormHelperText,
+  InputBaseComponentProps,
 } from "@material-ui/core";
 import { colorSet } from "../Provider";
 
@@ -22,6 +22,7 @@ export interface CustomizedSelectProps extends SelectProps {
   placeholder?: string;
   helperText?: string;
   listPlacement: "top" | "bottom";
+  inputProps?: InputBaseComponentProps;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -98,7 +99,6 @@ const Select = (props: CustomizedSelectProps) => {
         )}
         <MaterialSelect
           {...(props as SelectProps)}
-          inputProps={props as InputBaseComponentProps}
           classes={{ root: classes.root, select: classes.select }}
           MenuProps={{
             getContentAnchorEl: null,

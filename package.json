@@ -4,7 +4,9 @@
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
-    "build": "tsc src -d dist",
+    "build": "rm -rf /dist && tsc",
+    "publish": "npm version patch && cp -R package.json dist/ && cd ./dist && npm publish",
+    "tsc": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -81,5 +83,6 @@
   "homepage": "https://github.com/p33a33/capa_component#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "types": "dist/index.d.ts"
 }

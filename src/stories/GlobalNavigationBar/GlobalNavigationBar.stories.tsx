@@ -60,7 +60,7 @@ export const Client = Template.bind({});
 Client.args = {
   type: "client",
   tabs: ["요청현황", "채팅"],
-  onTabChange: (e, newValue) => {},
+  onTabChange: (e: React.ChangeEvent<{}>, newValue: any) => {},
   buttons: (
     <>
       <Button variant="text">클라우드</Button>
@@ -78,7 +78,7 @@ export const Partner = Template.bind({});
 Partner.args = {
   type: "partner",
   tabs: ["전체 견적요청", "상담 프로젝트", "확정 프로젝트"],
-  onTabChange: (e, newValue) => {},
+  onTabChange: (e: React.ChangeEvent<{}>, newValue: any) => {},
   buttons: (
     <>
       <Button variant="text">클라우드</Button>
