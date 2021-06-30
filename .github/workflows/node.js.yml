@@ -27,6 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.npm_token }}
+      with: 
+        token: ${{ secrets.NPM_TOKEN }}
 
