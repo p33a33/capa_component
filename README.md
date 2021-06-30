@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# CAPA-COMPONENT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 패키지는 CAPA페이지 디자인의 일관성 및 통일성, 재사용성 재고를 위해 제작되었습니다.
 
-## Available Scripts
+<br>
+<hr>
+<br>
 
-In the project directory, you can run:
+## 컴포넌트 추가
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. 만들고자 하는 컴포넌트 이름으로 브랜치를 생성합니다
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+ git checkout -b '브랜치이름'
+```
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. src/CustomizedComponent 폴더에 추가하고자 하는 컴포넌트 파일을 생성합니다.
+   <br>
 
-### `npm run build`
+3. src/CustomizedComponent/index.ts 파일에 해당 컴포넌트를 불러와 export 처리합니다.
+   <br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. src/stories 에 해당 컴포넌트 이름으로 폴더를 생성하고, <u>'컴포넌트이름'.stories.tsx</u> 파일을 생성합니다.
+   <br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. stories 파일에 다른 컴포넌트의 story를 참고해 해당 컴포넌트의 상태를 작성하고 저장합니다.
+   <br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. git add, commit을 통해 변경사항을 커밋하고 push 한 후에 master 브랜치로 PR합니다.
 
-### `npm run eject`
+<br>
+<hr>
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 컴포넌트 / 레이아웃
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+거의 모든 페이지의 기초를 이루는 GlobalNavigationBar(GNB), Container, Footer는 레이아웃으로 따로 표기했으나, 사용상의 차이는 없습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
+<hr>
+<br>
 
-## Learn More
+## 레이아웃
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GlobalNavigationBar
+- Container
+- Footer
+- Footer(Mobile)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
+
+## 컴포넌트
+
+- Button
+- Dialog
+- DialogAlert
+- Input
+- Label
+- Logo
+- NavigationBanner
+- Notification
+- Select
+- Tab
+- Tooltip
+- Typography
+
+<br>
