@@ -134,7 +134,7 @@ const Button: React.FC<ICustomizedButtonProps> = (
         },
       },
     });
-  }, [customizedPalette, customizedStyle, globalTheme]);
+  }, [customizedPalette, customizedStyle]);
 
   return (
     <ThemeProvider theme={theme}>
