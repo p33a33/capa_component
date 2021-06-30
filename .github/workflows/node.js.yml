@@ -30,6 +30,6 @@ jobs:
     
     - name: NPM Pulbish
       uses: JS-DevTools/npm-publish@v1
-      env: 
-        CD Env: ${{ secrets.NPM_TOKEN }}
+      with: 
+        Input : ${{ secrets.NPM_TOKEN }}
 
