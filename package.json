@@ -4,7 +4,7 @@
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf /dist && tsc && cp -R src/CustomizedComponent dist/ && cp -R src/CustomizedLayout dist/ && cp -R src/Provider dist/",
+    "build": "rm -rf /dist && tsc && cp -R src/CustomizedComponent dist/ && cp -R src/CustomizedLayout dist/ && cp -R src/Provider dist/ && cp -R src/assets dist/",
     "publish": "npm run build && npm version patch && cp -R package.json dist/ && cd dist/ && npm publish",
     "tsc": "tsc",
     "test": "react-scripts test",
