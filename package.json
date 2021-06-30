@@ -1,6 +1,6 @@
 {
   "name": "@david_capa/capa-component",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
