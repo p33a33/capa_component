@@ -67,7 +67,7 @@
     "web-vitals": "^1.1.2"
   },
   "description": "이 패키지는 CAPA페이지 디자인의 일관성 및 통일성, 재사용성 재고를 위해 제작되었습니다.",
-  "main": "index.ts",
+  "main": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/p33a33/capa_component.git"
