@@ -27,8 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: git config --global user.email="david@capa.ai"
-    - run: git config --global user.name="david"
+    - run: git config --global user.email "david@capa.ai"
+    - run: git config --global user.name "david"
     - run: npm run publish 
       env: 
         NODE_AUTH_TOKEN : ${{ secrets.NPM_TOKEN }}
